@@ -1,0 +1,114 @@
+<androidx.constraintlayout.widget.ConstraintLayout
+
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+
+    android:layout_height="match_parent">
+
+    <!-- Note: A RecyclerView can also be used -->
+    <!-- Scrollable content -->
+
+
+    <LinearLayout
+        android:layout_gravity="top"
+
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        android:background="#E6E9F6"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="15dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:textStyle="bold"
+                android:textColor="@color/black"
+                android:text="Explore"
+                android:textSize="15sp">
+
+            </TextView>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Filter"
+                android:textAlignment="textEnd"
+                android:textColor="#5DB075"
+                android:textSize="15sp">
+
+            </TextView>
+
+
+        </LinearLayout>
+
+        <EditText
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+
+            android:background="@drawable/rounded_button"
+            android:hint="Search"
+            android:padding="10dp" />
+
+    </LinearLayout>
+
+    <fragment
+        android:id="@+id/nav_host_fragment"
+        android:name="androidx.navigation.fragment.NavHostFragment"
+        android:layout_width="match_parent"
+        android:layout_height="548dp"
+        app:layout_constraintBottom_toTopOf="@id/nav_vie"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/linearLayout"
+        app:navGraph="@navigation/mobile_navigation" />
+
+    <com.google.android.material.bottomappbar.BottomAppBar
+
+        android:id="@+id/nav_vie"
+        style="@style/Widget.MaterialComponents.BottomAppBar.Colored"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        app:contentInsetStart="0dp"
+        app:contentInsetStartWithNavigation="0dp"
+        app:fabAlignmentMode="center"
+
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+
+        app:layout_constraintStart_toStartOf="parent"
+
+
+        tools:ignore="BottomAppBar">
+
+        <com.google.android.material.bottomnavigation.BottomNavigationView
+
+            android:id="@+id/nav_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="?android:attr/windowBackground"
+
+            app:labelVisibilityMode="labeled"
+
+            app:menu="@menu/bottom_nav_menu" />
+
+    </com.google.android.material.bottomappbar.BottomAppBar>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
